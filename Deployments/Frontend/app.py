@@ -1,9 +1,43 @@
 import streamlit as st
 import pandas as pd
 import requests
+from PIL import Image
+
+
+st.set_page_config(
+    page_title="Fake News Prediction Model",
+    layout='wide',
+    initial_sidebar_state='expanded'
+)
 
 # Membuat fungsi untuk melakukan prediksi
 def run():
+
+    # Menggunakan Kolom untuk menengahkan text
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.write(' ')
+
+    with col2:
+        # Membuat judul
+        st.title('Fake News Prediction Model')
+    
+    with col3:
+        st.write(' ')
+
+    col4, col5, col6 = st.columns(3)
+
+    with col4:
+        st.write(' ')
+
+    with col5:
+        image = Image.open('Fake_News.jpg')
+        st.image(image, caption='Fake News')
+    
+    with col6:
+        st.write(' ')
+
     # Membuat form parameter
     with st.form(key='form_parameters'):
         title = st.text_input('News Title', max_chars=150, value='', help='Diiskan judul berita')
@@ -24,7 +58,7 @@ def run():
         print('[DEBUG] Data Inference : \n', data_inf)
         
         # Melakukan prediksi (URL tempat backend di deploy)
-        URL = "https://backend-fake-news-ardiansyaharya.koyeb.app/predict"
+        URL = "http://125.164.17.106:8080/predict"
         r = requests.post(URL, json=data_inf)
         
         if r.status_code == 200:

@@ -1,0 +1,8 @@
+Link Model dan Code Backend (karena filesize terlalu besar) :
+https://github.com/ArdiansyahArya/backend_milestone_2
+
+Link Koyeb :
+https://backend-fake-news-ardiansyaharya.koyeb.app/
+
+Link Hugging Face :
+https://huggingface.co/spaces/Arya99/fake_news_predict

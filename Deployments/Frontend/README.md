@@ -1,5 +1,5 @@
 ---
-title: Frontend Milestone 1 Phase 2
+title: Frontend Milestone 2 Phase 2
 emoji: 👁
 colorFrom: purple
 colorTo: yellow

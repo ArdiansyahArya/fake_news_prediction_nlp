@@ -35,7 +35,7 @@ def news_predict():
     data_inf.drop('title', axis=1, inplace=True)
     data_inf.drop('text', axis=1, inplace=True)
     data_inf_pro = data_inf['feature'].apply(lambda x: text_proses(x))
-    y_pred_inf = model_predict.predict(data_inf_pro)
+    y_pred_inf = model_predict.predict(data_inf_pro, batch_size=2)
     y_pred_inf = np.where(y_pred_inf >= 0.5, 1, 0)
 
     # Membuat fungsi if untuk respon, 0 = customer tidak meninggalkan jasa
